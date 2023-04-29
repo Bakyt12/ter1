@@ -4,7 +4,8 @@ resource "aws_instance" "web" {
 
   key_name = var.key_name
 
-  security_groups = ["allow_ssh"]
+  # interpollation ${aws_security_group.name.name}  get the value from 1 resource to another one
+  security_groups = ["${aws_security_group.allow_ssh.name}", "${aws_security_group.allow_http.name}"]
 
   tags = var.instance_tags
 }

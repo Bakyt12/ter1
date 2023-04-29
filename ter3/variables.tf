@@ -1,3 +1,4 @@
+# variables can be used for changing resources, so u can apply 1 variable to multiple resources
 variable "key_name" {
   type        = string
   default     = "deployer-key"
@@ -28,7 +29,7 @@ variable "ami_name" {
   description = "EC2 ami name"
 }
 
-#map (key-value)
+#map (key-value)   
 variable "instance_tags" {
   type        = map(any)
   description = "EC2 instance tags"

@@ -10,3 +10,4 @@ resource "aws_instance" "web" {
   tags = var.instance_tags
 }
 
+#

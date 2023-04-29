@@ -28,6 +28,7 @@ variable "ami_name" {
   description = "EC2 ami name"
 }
 
+#map (key-value)
 variable "instance_tags" {
   type        = map(any)
   description = "EC2 instance tags"
@@ -35,4 +36,11 @@ variable "instance_tags" {
     owner = "DevOps"
     key2  = "Terraform"
   }
+}
+
+#list ("string") - []
+variable "ingress_cidr" {
+  type        = list(any)
+  description = "(optional) describe your variable"
+  default     = ["0.0.0.0/0"]
 }

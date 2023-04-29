@@ -8,7 +8,7 @@ resource "aws_security_group" "allow_ssh" {
     from_port   = var.ssh_port
     to_port     = var.ssh_port
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = var.ingress_cidr
   }
 
   egress {
@@ -34,7 +34,7 @@ resource "aws_security_group" "allow_http" {
     from_port   = var.http_port
     to_port     = var.http_port
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = var.ingress_cidr
   }
 
   egress {
